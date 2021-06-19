@@ -30,6 +30,8 @@ A aplicação necessita do SqlServer com um banco de dados criado chamado Shop.
 	  ```
 	 
 ## Uso
+Com o projeto em execução a aplicação fica disponivel em:
+http://localhost:8080/
 
-Com a aplicação em execução a documentação Swagger pode ser acessada em: 
+A documentação Swagger pode ser acessada em: 
 http://localhost:8080/swagger-ui.html
