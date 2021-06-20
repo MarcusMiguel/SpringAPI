@@ -7,208 +7,230 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 <style>
-body, html {
-  height: 100%;
-  font-family: "Inconsolata", sans-serif;
-}
+    body,
+    html {
+        height: 100%;
+        font-family: "Inconsolata", sans-serif;
+    }
 
-.navbar{
-font-size: 18px;
-}
-.bgimg {
-  background-position: center;
-  background-size: cover;
-  background-image: url("/images/coffeehouse.jpg");
-  min-height: 75%;
-}
+    .navbar {
+        font-size: 18px;
+    }
 
-.menu {
-  display: none;
-}
+    .bgimg {
+        background-position: center;
+        background-size: cover;
+        background-image: url("/images/coffeehouse.jpg");
+        min-height: 75%;
+    }
 
-.cartbutton{
-    margin-top: 5px;
-}
+    .menu {
+        display: none;
+    }
 
-.carttitle{
-    margin-top: 15px;
-    margin-bottom: 5px;
-}
-.cancelbtn{
-    margin-top: 5px;
-}
+    .cartbutton {
+        margin-top: 5px;
+    }
 
+    .carttitle {
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+
+    .cancelbtn {
+        margin-top: 5px;
+    }
 </style>
+
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+
 <body>
 
-<!-- Links (sit on top) -->
-<div class="w3-top">
-    <div class="w3-row w3-padding w3-black navbar">
-        <div class="w3-col s2">
-            <a href="#" class="w3-button w3-block w3-black">HOME</a>
-        </div>
-        <div class="w3-col s2">
-            <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
-        </div>
-        <div class="w3-col s2">
-            <a href="#menu" class="w3-button w3-block w3-black">STORE</a>
-        </div>
-        <div class="w3-col s2">
-            <a href="#cartmenu" class="w3-button w3-block w3-black">CART</a>
-        </div>
-        <div class="w3-col s2">
-            <a href="#where" class="w3-button w3-block w3-black">WHERE</a>
-        </div>
-        <div class="w3-col s2">
-            <a href="logout" class="w3-button w3-block w3-black">LOGOUT</a>
-        </div>
-    </div>
-</div>
-
-<!-- Header with image -->
-<header class="bgimg w3-display-container w3-grayscale-min" id="home">
-    <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
-        <span class="w3-tag">Open from 9am to 9pm</span>
-    </div>
-    <div class="w3-display-middle w3-center">
-        <span class="w3-text-white" style="font-size:90px">The<br>Market</span>
-    </div>
-    <div class="w3-display-bottomright w3-center w3-padding-large">
-        <span class="w3-text-white">15 Adr street, 5015</span>
-    </div>
-</header>
-
-<!-- Add a background color and large text to the whole page -->
-<div class="w3-sand w3-grayscale w3-large">
-
-    <!-- About Container -->
-    <div class="w3-container" id="about">
-        <div class="w3-content" style="max-width:700px">
-            <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT THE CAFE</span></h5>
-            <p>The Cafe was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>In addition to our full espresso and brew bar menu, we serve fresh made-to-order breakfast and lunch sandwiches, as well as a selection of sides and salads and other good stuff.</p>
-            <div class="w3-panel w3-leftbar w3-light-grey">
-                <p><i>"Use products from nature for what it's worth - but never too early, nor too late." Fresh is the new sweet.</i></p>
-                <p>Chef, Coffeeist and Owner: Liam Brown</p>
+    <!-- Links (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-row w3-padding w3-black navbar">
+            <div class="w3-col s2">
+                <a href="#" class="w3-button w3-block w3-black">HOME</a>
             </div>
-            <img src="/images/coffeeshop.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
-            <p><strong>Opening hours:</strong> everyday from 6am to 5pm.</p>
-            <p><strong>Address:</strong> 15 Adr street, 5015, NY</p>
+            <div class="w3-col s2">
+                <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
+            </div>
+            <div class="w3-col s2">
+                <a href="#menu" class="w3-button w3-block w3-black">STORE</a>
+            </div>
+            <div class="w3-col s2">
+                <a href="#cartmenu" class="w3-button w3-block w3-black">CART</a>
+            </div>
+            <div class="w3-col s2">
+                <a href="#where" class="w3-button w3-block w3-black">WHERE</a>
+            </div>
+            <div class="w3-col s2">
+                <a href="logout" class="w3-button w3-block w3-black">LOGOUT</a>
+            </div>
         </div>
     </div>
 
-    <!-- Menu Container -->
-    <div class="w3-container" id="menu">
-        <div class="w3-content" style="max-width:700px">
+    <!-- Header with image -->
+    <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+        <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+            <span class="w3-tag">Open from 9am to 9pm</span>
+        </div>
+        <div class="w3-display-middle w3-center">
+            <span class="w3-text-white" style="font-size:90px">The<br>Market</span>
+        </div>
+        <div class="w3-display-bottomright w3-center w3-padding-large">
+            <span class="w3-text-white">15 Adr street, 5015</span>
+        </div>
+    </header>
 
-            <h5 class="w3-center"><span class="w3-tag w3-wide">STORE<i class="fas fa-store"></i></span></h5>
+    <!-- Add a background color and large text to the whole page -->
+    <div class="w3-sand w3-grayscale w3-large">
 
-            <div class="w3-container  w3-padding-48 w3-card " id="shops">
-                <div th:each="shop:${shopservice.findAll()}" th:id="${shop.name}"  >
-                    <div class="w3-margin  "  th:each="item:${shop.store}">
-                        <h5 th:text="'Product: ' + ${item.productCode.getCode} + ' Shop: ' + ${shop.name}">-</h5>
-                        <div th:text="${item.productCode.description}"  class="w3-col-6 w3-text-grey"></div>
-                        <div th:text="'Quantity: x' + ${item.quantity} +'     Price: $' + ${item.productCode.price.value}"  class="w3-col-6 w3-text-grey"></div>
-                            <input  th:id="${shop.name} + 'input'+ ${item.productCode.code}" type="number" value=1 min=1>
-                        <button id="cartbutton" class="w3-col-3 cartbutton" th:shopname="${shop.name}" th:idproduct="${item.productCode.code}" th:idshop="${item.affiliateCode.code}">Add to Cart<i class="fas fa-shopping-cart fa-sm"></i></button>
+        <!-- About Container -->
+        <div class="w3-container" id="about">
+            <div class="w3-content" style="max-width:700px">
+                <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT THE CAFE</span></h5>
+                <p>The Cafe was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>In addition to our full espresso and brew bar menu, we serve fresh made-to-order breakfast and lunch
+                    sandwiches, as well as a selection of sides and salads and other good stuff.</p>
+                <div class="w3-panel w3-leftbar w3-light-grey">
+                    <p><i>"Use products from nature for what it's worth - but never too early, nor too late." Fresh is
+                            the new sweet.</i></p>
+                    <p>Chef, Coffeeist and Owner: Liam Brown</p>
+                </div>
+                <img src="/images/coffeeshop.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
+                <p><strong>Opening hours:</strong> everyday from 6am to 5pm.</p>
+                <p><strong>Address:</strong> 15 Adr street, 5015, NY</p>
+            </div>
+        </div>
+
+        <!-- Menu Container -->
+        <div class="w3-container" id="menu">
+            <div class="w3-content" style="max-width:700px">
+
+                <h5 class="w3-center"><span class="w3-tag w3-wide">STORE<i class="fas fa-store"></i></span></h5>
+
+                <div class="w3-container  w3-padding-48 w3-card " id="shops">
+                    <div th:each="shop:${shopservice.findAll()}" th:id="${shop.name}">
+                        <div class="w3-margin  " th:each="item:${shop.store}">
+                            <h5 th:text="'Product: ' + ${item.productCode.getCode} + ' Shop: ' + ${shop.name}">-</h5>
+                            <div th:text="${item.productCode.description}" class="w3-col-6 w3-text-grey"></div>
+                            <div th:text="'Quantity: x' + ${item.quantity} +'     Price: $' + ${item.productCode.price.value}"
+                                class="w3-col-6 w3-text-grey"></div>
+                            <input th:id="${shop.name} + 'input'+ ${item.productCode.code}" type="number" value=1 min=1>
+                            <button id="cartbutton" class="w3-col-3 cartbutton" th:shopname="${shop.name}"
+                                th:idproduct="${item.productCode.code}" th:idshop="${item.affiliateCode.code}">Add to
+                                Cart<i class="fas fa-shopping-cart fa-sm"></i></button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <h5 id="cart" class="w3-center  carttitle"><span class="w3-tag w3-wide">CART<i class="fas fa-cart-arrow-down"></i></span></h5>
+                <h5 id="cart" class="w3-center  carttitle"><span class="w3-tag w3-wide">CART<i
+                            class="fas fa-cart-arrow-down"></i></span></h5>
 
-            <div  id="cartmenu" class="w3-container w3-padding-48 w3-card w3-margin-top">
-                <h2 >
-                    <span>Total     <i class="fas fa-dollar-sign"></i></span>
-                    <span th:text="${cartservice.findByUserModel(usermodel).totalCost}"></span>
-                </h2>
-                <div th:each="item:${cartservice.findByUserModel(usermodel).userStores}"   class="w3-container w3-padding-48 w3-card " >
+                <div id="cartmenu" class="w3-container w3-padding-48 w3-card w3-margin-top">
+                    <h2>
+                        <span>Total <i class="fas fa-dollar-sign"></i></span>
+                        <span th:text="${cartservice.findByUserModel(usermodel).totalCost}"></span>
+                    </h2>
+                    <div th:each="item:${cartservice.findByUserModel(usermodel).userStores}"
+                        class="w3-container w3-padding-48 w3-card ">
                         <h5 th:text="'Product: ' + ${item.productCode} + ' Shop: ' + ${item.shopCode}">-</h5>
-                        <div th:text="'Quantity: x' + ${item.quantity}"   class="w3-col-6 w3-text-grey">quantity</div>
-                        <button id="cancelbtn" class="w3-col-3 cancelbtn" href="javascript:void(0)" th:shopcode="${item.shopCode}" th:productcode="${item.productCode}">Cancel</button>
+                        <div th:text="'Quantity: x' + ${item.quantity}" class="w3-col-6 w3-text-grey">quantity</div>
+                        <button id="cancelbtn" class="w3-col-3 cancelbtn" href="javascript:void(0)"
+                            th:shopcode="${item.shopCode}" th:productcode="${item.productCode}">Cancel</button>
+                    </div>
                 </div>
+
+                <img src="/images/coffeehouse2.jpg" style="width:100%;max-width:1000px;margin-top:32px;">
             </div>
-
-            <img src="/images/coffeehouse2.jpg" style="width:100%;max-width:1000px;margin-top:32px;">
         </div>
+
+        <!-- Contact/Area Container -->
+        <div class="w3-container" id="where" style="padding-bottom:32px;">
+            <div class="w3-content" style="max-width:700px">
+                <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WHERE TO FIND US</span></h5>
+                <p>Find us at some address at some place.</p>
+                <img src="/images/map.jpg" class="w3-image" style="width:100%">
+                <p><span class="w3-tag">FYI!</span> We offer full-service catering for any event, large or small. We
+                    understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both
+                    look and taste.</p>
+                <p><strong>Reserve</strong> a table, ask for today's special or just send us a message:</p>
+                <form action="/action_page.php" target="_blank">
+                    <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required
+                            name="Name"></p>
+                    <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people"
+                            required name="People"></p>
+                    <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time"
+                            required name="date" value="2020-11-16T20:00"></p>
+                    <p><input class="w3-input w3-padding-16 w3-border" type="text"
+                            placeholder="Message \ Special requirements" required name="Message"></p>
+                    <p><button class="w3-button w3-black" type="submit">SEND MESSAGE</button></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- End page content -->
     </div>
 
-    <!-- Contact/Area Container -->
-    <div class="w3-container" id="where" style="padding-bottom:32px;">
-        <div class="w3-content" style="max-width:700px">
-            <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WHERE TO FIND US</span></h5>
-            <p>Find us at some address at some place.</p>
-            <img src="/images/map.jpg" class="w3-image" style="width:100%">
-            <p><span class="w3-tag">FYI!</span> We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.</p>
-            <p><strong>Reserve</strong> a table, ask for today's special or just send us a message:</p>
-            <form action="/action_page.php" target="_blank">
-                <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
-                <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
-                <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
-                <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
-                <p><button class="w3-button w3-black" type="submit">SEND MESSAGE</button></p>
-            </form>
-        </div>
-    </div>
+    <!-- Footer -->
+    <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
+                class="w3-hover-text-green">w3.css</a></p>
+    </footer>
+    <script type="text/javascript">
 
-    <!-- End page content -->
-</div>
+        $(document).ready(function () {
+            $(document).on("click", "#cancelbtn", function (e) {
+                cancelCart(e.currentTarget.attributes.shopcode.value, e.currentTarget.attributes.productcode.value)
+            })
 
-<!-- Footer -->
-<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
-    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-</footer>
-<script type="text/javascript">
+            $(document).on("click", ".cartbutton", function (e) {
+                var idproduct = e.currentTarget.attributes.idproduct.value
+                var idshop = e.currentTarget.attributes.idshop.value
+                var quantity = document.getElementById(e.currentTarget.attributes.shopname.value + 'input' + idproduct).value
+                addToCart(idshop, idproduct, quantity)
+            })
 
-    $(document).ready(function(){
-        $(document).on("click","#cancelbtn", function(e){
-            cancelCart(e.currentTarget.attributes.shopcode.value,e.currentTarget.attributes.productcode.value )
+            $(document).on("click", "#myLink", function (e) {
+                openMenu(e, e.currentTarget.attributes.shopname.value)
+            })
         })
 
-        $(document).on("click",".cartbutton", function(e){
-        var idproduct = e.currentTarget.attributes.idproduct.value
-        var idshop = e.currentTarget.attributes.idshop.value
-        var quantity = document.getElementById(e.currentTarget.attributes.shopname.value+'input'+idproduct).value
-        addToCart(idshop,idproduct , quantity )
-        })
 
-        $(document).on("click","#myLink", function(e){
-            openMenu(e, e.currentTarget.attributes.shopname.value)
-        })
-    })
+        function cancelCart(shopid, productid) {
+            console.log("removing productid: " + productid + " shop: " + shopid);
+            $.ajax({
+                type: "POST",
+                url: "https://marcusmiguel-restapi.herokuapp.com/api/carts/removeUI/" + shopid + "/" + productid,
+                complete: function (data) {
+                    setTimeout(() => { console.log("product added to cart"); }, 500)
+                    $("#cartmenu").load(location.href + " #cartmenu>*", "")
+                    $("#shops").load(location.href + " #shops>*", "")
+                }
+            })
+        }
 
+        function addToCart(shopid, productid, quantity) {
+            console.log("adding product, shopid: " + shopid + " productid: " + productid + " quantity: " + quantity);
 
-    function cancelCart( shopid, productid ){
-        console.log("removing productid: " + productid + " shop: " + shopid);
-        $.ajax({
-        type: "POST",
-        url: "http://localhost:8080/api/carts/removeUI/" + shopid + "/" + productid,
-        complete: function(data){
-                setTimeout(() => {  console.log("product added to cart"); }, 500)
-                $("#cartmenu").load(location.href+" #cartmenu>*","")
-                $("#shops").load(location.href+" #shops>*","")
-            }
-        })
-    }
+            $.ajax({
+                type: "POST",
+                url: "https://marcusmiguel-restapi.herokuapp.com/api/carts/insertUI/" + shopid + "/" + productid + "/" + quantity,
+                complete: function (data) {
+                    setTimeout(() => { console.log("product added to cart"); }, 500)
+                    $("#cartmenu").load(location.href + " #cartmenu>*", "")
+                    $("#shops").load(location.href + " #shops>*", "")
+                }
+            })
+        }
 
-    function addToCart(shopid, productid, quantity){
-        console.log("adding product, shopid: " +  shopid + " productid: " + productid + " quantity: " + quantity);
-
-      $.ajax({
-        type: "POST",
-        url: "http://localhost:8080/api/carts/insertUI/" + shopid + "/" + productid + "/" + quantity,
-        complete: function(data){
-                setTimeout(() => {  console.log("product added to cart"); }, 500)
-                $("#cartmenu").load(location.href+" #cartmenu>*","")
-                $("#shops").load(location.href+" #shops>*","")
-            }
-        })
-    }
-
-</script>
+    </script>
 
 </body>
+
 </html>
