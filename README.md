@@ -3,35 +3,24 @@
 
 ![img](/src/main/resources/static/images/store2.gif)
     
-A aplicação permite o gerenciamento de produtos do estoque de uma loja. 
+A aplicação permite o gerenciamento de produtos do estoque de uma empresa, podendo os usuários adicionarem produtos ao seu carrinho de compras. 
 
-Algumas caracteristicas:
-* A API usa o Spring Security com JWT para realizar autorização e autenticação.
-* Somente usuarios registrados por um ADMIN podem utilizar a aplicação.
-* Após a autorização os usuários podem adicionar produtos ao seu carrinho de compras. 
-* A API possui documentação no Swagger.
-
-
-### Pré-requisitos
-
-A aplicação necessita do SqlServer com um banco de dados criado chamado Shop.
-
-### Instalação
-
-1. Baixe o repositório.
-   ```sh
-   git clone https://github.com/MarcusMiguel/SpringAPI.git
-   ```
-2.  A configuração da conecção com o banco precisa ser feita no arquivo application.properties. Exemplo:
-	  ```sh
-	  spring.datasource.url=jdbc:sqlserver://localhost:1433;databaseName=Shop
-	  spring.datasource.username=sa
-	  spring.datasource.password=SqlServer2017!
-	  ```
+* Somente usuários registrados por um ADMIN podem utilizar a aplicação[1].
 	 
 ## Uso
-Com o projeto em execução a aplicação fica disponivel em:
-http://localhost:8080/
+A aplicação está disponível em:
+	
+	https://marcusmiguel-restapi.herokuapp.com/
 
 A documentação Swagger pode ser acessada em: 
-http://localhost:8080/swagger-ui.html
+
+	https://marcusmiguel-restapi.herokuapp.com/swagger-ui.html
+
+
+[1] Os usuários já cadastrados são:
+
+	username: admin
+	password: admin
+
+	username: consumer
+	password: consumer
