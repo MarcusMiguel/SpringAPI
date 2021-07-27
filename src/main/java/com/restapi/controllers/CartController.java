@@ -36,7 +36,11 @@ public class CartController {
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping(path="/insert")
     public void insertProduct(@RequestBody  UserModel userModel, @RequestBody Store store, Integer quantity){
-        cartService.insertProduct(userModel, store, quantity);
+        try {
+            cartService.insertProduct(userModel, store, quantity);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @PreAuthorize("hasRole('ADMIN')")
@@ -47,17 +51,17 @@ public class CartController {
 
     @Synchronized
     @PostMapping(path = "/removeUI/{shopid}/{productid}")
-    public Cart removeProductUI(@PathVariable int shopid ,@PathVariable  int productid){
+    public void removeProductUI(@PathVariable int shopid ,@PathVariable  int productid){
         UserModel user = customUserDetailsService.findUserModelByUserName(  SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString());
         UserStore store =   userStoreService.findByUsernameAndProductIdAndShopId(user.getUsername(), productid, shopid);
-        return cartService.removeProduct(user, store);
+        cartService.removeProduct(user, store);
     }
 
     @Synchronized
     @PostMapping(path="/insertUI/{shopid}/{productid}/{quantity}")
-    public Cart insertUI(@PathVariable int shopid, @PathVariable int productid, @PathVariable int quantity){
+    public void insertUI(@PathVariable int shopid, @PathVariable int productid, @PathVariable int quantity){
         try {
-            return cartService.insertProduct(
+            cartService.insertProduct(
                     customUserDetailsService.findUserModelByUserName(  SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString()),
                     storeService.findById(shopid, productid),
                     quantity);

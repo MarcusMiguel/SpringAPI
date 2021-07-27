@@ -108,14 +108,13 @@ public class CartServiceTest {
         assertThat(result.get(0).getQuantity(), is(equalTo(quantity)));
     }
 
-    @DisplayName("Valida o lancamento de exceção quando a quantia é maior que a permitida")
+    @DisplayName("Valida o lancamento de excecao quando a quantia é invalida")
     @ParameterizedTest
     @ValueSource(ints = {150, 500})
     void whenInsertProductUIIsCalledWithQuantityGreaterThanStoryQuantityThenExceptionIsThrowed(int quantity)
     {
         assertThrows(Exception.class, () -> cartService.insertProduct(userModel, productInStore, quantity));
     }
-
 
     @DisplayName("Valida a remocao de produtos no carrinho")
     @Test
@@ -133,5 +132,4 @@ public class CartServiceTest {
         assertThat(result.getUserStores(), not(hasItem(userStoreToRemove)));
     }
 
-    //tentar encontrar excessoes
 }
