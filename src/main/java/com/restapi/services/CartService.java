@@ -2,13 +2,11 @@ package com.restapi.services;
 
 import com.restapi.models.*;
 import com.restapi.repositories.CartRepository;
-import com.restapi.repositories.PriceRepository;
 import lombok.Synchronized;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -57,10 +55,10 @@ public class CartService {
 
         @Synchronized
         @Transactional
-        public  void  insertProduct(UserModel userModel, Store product, int quantity) {
+        public  Cart  insertProduct(UserModel userModel, Store product, int quantity) throws Exception {
             Cart cart = cartRepository.findByUserModel(userModel);
             List<UserStore> products = cart.getUserStores();
-            try{
+
                 //try to get the product in the cart
                 List<UserStore> aux = products.stream().filter(x ->
                         (x.getProductCode()== (product.getProductCode().getCode())
@@ -87,7 +85,9 @@ public class CartService {
                         //remove the quantity from the store
                         storeService.removeProducts(quantity, product);
                     }
-                    else { throw new Exception("Quantity exceeds the number of items in the store."); }
+                    else {
+                        throw new Exception("Quantity exceeds the number of items in the store.");
+                    }
                 }
                 //if the product is not present in the cart
                 else if (quantity <= product.getQuantity()){
@@ -108,18 +108,15 @@ public class CartService {
                 else {
                     throw new Exception("Quantity exceeds the number of items in the store.");
                 }
-                UserModel user = customUserDetailsService.findUserModelByUserName(userModel.getUsername());
-                user.setCart(cart);
-                customUserDetailsService.register(user);
+                userModel.setCart(cart);
+                customUserDetailsService.register(userModel);
 
-            }catch (Exception e){
-                System.out.println(e);
-            }
+            return cart;
         }
 
         @Synchronized
         @Transactional
-        public  void removeProduct(UserModel userModel, UserStore product) {
+        public Cart removeProduct(UserModel userModel, UserStore product) {
             Cart cart = cartRepository.findByUserModel( userModel );
             List<UserStore> products = cart.getUserStores();
 
@@ -140,5 +137,6 @@ public class CartService {
             cart.setTotalCost(cart.getTotalCost() - (int) (productService.findById(product.getProductCode()).getPrice().getValue()*product.getQuantity()));
             cartRepository.save(cart);
             userStoreService.delete(userModel.getUsername(), product.getProductCode(),product.getShopCode());
+           return cart;
         }
     }
