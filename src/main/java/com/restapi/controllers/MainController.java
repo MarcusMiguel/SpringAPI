@@ -50,14 +50,9 @@ public class MainController
             started = true;
         };
         ModelAndView mv = new ModelAndView("index");
-        mv.addObject("shopservice", shopService );
+        mv.addObject("shopservice", shopService);
         mv.addObject("cartservice", cartService);
         mv.addObject("usermodel",  customUserDetailsService.findUserModelByUserName(   SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString()));
-//        System.out.println("---");
-//        System.out.println("store");
-//        storeService.findAll().forEach(  x->      System.out.println("qtd: " + x.getQuantity() + " storecode: " + x.getCode() + " productcode: " + x.getProductCode().getCode() + " shopcode: " + x.getAffiliateCode().getCode() ) );
-//        System.out.println("cart");
-//        cartService.findByUserModel(customUserDetailsService.findUserModelByUserName(   SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString())).getUserStores().forEach(  x->      System.out.println( " qtd: " + x.getQuantity() + " userstore: " + x.getCode() + " productcode: " + x.getProductCode() + " shopcode " + x.getShopCode() + " username: " + x.getUsername() ));
         return mv;
     }
 
@@ -122,7 +117,11 @@ public class MainController
         user.setCart(cart);
         customUserDetailsService.register(user);
         cartService.update(cart);
-        cartService.insertProduct(user, store, 1);
+        try {
+            cartService.insertProduct(user, store, 1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
         //add cart to user consumer
