@@ -1,23 +1,35 @@
 
-## REST API com Spring
+## ProductStore Application
 
 ![img](/src/main/resources/static/images/store2.gif)
-    
-A aplicação permite o gerenciamento de produtos do estoque de uma empresa, podendo os usuários adicionarem produtos ao seu carrinho de compras. 
 
-* Somente usuários registrados por um ADMIN podem utilizar a aplicação[1].
+## Project Structure
+- **Frontend**: HTML page with Thymeleaf.
+- **Backend**: Spring API secured with Spring Security + JWT, mostly controllers are for ADMIN usage only.
+
+## Technologies
+- Spring
+- Spring Security
+- JWT
+- PostgreSQL
+- Lombok
+- Thymeleaf
+
+
 	 
-## Uso
-A aplicação está disponível em:
+## Usage
+`Only users registered by an ADMIN can use the application[1].`
+
+The application can be accessed here:
 	
 	https://marcusmiguel-restapi.herokuapp.com/
 
-A documentação Swagger pode ser acessada em: 
+And the Swagger Docs here: 
 
 	https://marcusmiguel-restapi.herokuapp.com/swagger-ui.html
 
 
-[1] Os usuários já cadastrados são:
+[1] Already registered users:
 
 	username: admin
 	password: admin
