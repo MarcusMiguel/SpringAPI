@@ -31,7 +31,7 @@ function cancelCart(shopid, productid) {
     console.log("removing productid: " + productid + " shop: " + shopid);
     $.ajax({
         type: "POST",
-        url: "http://localhost:8080/api/carts/removeUI/" + shopid + "/" + productid,
+        url: "https://marcusmiguel-restapi.herokuapp.com/api/carts/removeUI/" + shopid + "/" + productid,
         complete: function (data) {
             var shopproductsrow = '#shop-products-row'+shopid
             setTimeout(() => { console.log("product removed from cart"); }, 500)
@@ -46,7 +46,7 @@ function addToCart(shopid, productid, quantity) {
     console.log("adding product, shopid: " + shopid + " productid: " + productid + " quantity: " + quantity);
     $.ajax({
         type: "POST",
-        url: "http://localhost:8080/api/carts/insertUI/" + shopid + "/" + productid + "/" + quantity,
+        url: "https://marcusmiguel-restapi.herokuapp.com/api/carts/insertUI/" + shopid + "/" + productid + "/" + quantity,
         complete: function (data) {
             var shopproductsrow = '#shop-products-row'+shopid
             setTimeout(() => { console.log("product added to cart"); }, 500)
