@@ -1,7 +1,7 @@
 
 ## ProductStore Application
 
-![img](/src/main/resources/static/images/store2.gif)
+![img](/src/main/resources/static/images/productstore.gif)
 ## About
 Application that simulates an ecommerce with the user being able to login and add/remove products to cart
 ## Project Structure
@@ -15,9 +15,6 @@ Application that simulates an ecommerce with the user being able to login and ad
 - PostgreSQL
 - Lombok
 - Thymeleaf
-
-
-	 
 ## Usage
 `Only users registered by an ADMIN can use the application[1].`
 

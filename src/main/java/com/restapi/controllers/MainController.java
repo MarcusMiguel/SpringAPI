@@ -123,7 +123,6 @@ public class MainController
             e.printStackTrace();
         }
 
-
         //add cart to user consumer
         UserModel user2 = customUserDetailsService.findUserModelByUserName("consumer");
         List<UserStore> cartStores2 = new ArrayList<>();

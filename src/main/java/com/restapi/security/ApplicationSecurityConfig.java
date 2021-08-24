@@ -51,8 +51,8 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
             .addFilter(new JwtUsernameAndPasswordAuthenticationFilter(authenticationManager(), jwtConfig, secretKey))
             .addFilterAfter(new JwtTokenVerifier(secretKey, jwtConfig),JwtUsernameAndPasswordAuthenticationFilter.class)
             .authorizeRequests()
-            .antMatchers("/login", "/api/status").permitAll()
-            .anyRequest()
+            .antMatchers("/login", "/api/status", "/resources/**").permitAll()
+                .anyRequest()
             .authenticated().and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
@@ -64,6 +64,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.authenticationProvider(daoAuthenticationProvider());
         customUserDetailsService.startUsers();
     }
+
 
     @Bean
     public DaoAuthenticationProvider daoAuthenticationProvider() {

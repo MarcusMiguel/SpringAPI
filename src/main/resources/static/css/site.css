@@ -1,0 +1,290 @@
+ body, html {
+height: 100%;
+}
+
+.navbar {
+font-size: 18px;
+}
+
+.bgimg {
+background-position: center;
+background-size: cover;
+background-image: url("/images/coffeehouse.jpg");
+min-height: 75%;
+}
+
+.menu {
+display: none;
+}
+
+.cartbutton {
+margin-top: 5px;
+width: 118px;
+
+}
+
+.carttitle {
+margin-top: 15px;
+margin-bottom: 5px;
+}
+
+.cancelbtn {
+margin-top: 5px;
+}
+
+.navbar-img{
+    size: 30px;
+    width: 30px;
+    height: auto;
+}
+
+.navbar{
+    z-index: 3;
+    background: white;
+}
+
+.btn-navbar{
+    margin-left: 30px;
+    margin-top: 4px;
+}
+
+.nav-link{
+    margin-left: 30px;
+}
+
+body {
+    background-color: #EEEEEE
+}
+
+a {
+    text-decoration: none !important
+}
+
+.card-product-list,
+.card-product-grid {
+    margin-bottom: 0
+}
+
+.card {
+    width: 200px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 200px;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 23px;
+    margin-bottom: 50px;
+}
+
+.card-product-grid:hover {
+    -webkit-box-shadow: 0 4px 15px rgba(153, 153, 153, 0.3);
+    box-shadow: 0 4px 15px rgba(153, 153, 153, 0.3);
+    -webkit-transition: .3s;
+    transition: .3s
+}
+
+.card-product-grid .img-wrap {
+    border-radius: 0.2rem 0.2rem 0 0;
+    height: 100px
+}
+
+.card .img-wrap {
+    overflow: hidden
+}
+
+.card-lg .img-wrap {
+    height: 80px
+}
+
+.card-product-grid .img-wrap {
+    border-radius: 0.2rem 0.2rem 0 0;
+    height: 75px;
+    padding: 16px
+}
+
+[class*='card-product'] .img-wrap img {
+    height: 100%;
+    max-width: 100%;
+    width: auto;
+    display: inline-block;
+    -o-object-fit: cover;
+    object-fit: cover
+}
+
+.img-wrap {
+    text-align: center;
+    display: block
+}
+
+.card-product-grid .info-wrap {
+    overflow: hidden;
+    padding: 18px 20px
+}
+
+[class*='card-product'] a.title {
+    color: #212529;
+    display: block
+}
+
+.card-product-grid .bottom-wrap {
+    padding: 18px;
+    border-top: 1px solid #e4e4e4
+}
+
+.bottom-wrap-payment {
+    padding: 0px;
+}
+
+.rated {
+    font-size: 10px;
+    color: #b3b4b6
+}
+
+.remaining{
+    font-size: small;
+}
+
+.storecard-container{
+    width: 100%;
+}
+
+.container{
+    margin: 0 !important;
+    width: 100% !important;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+.cart-input{
+    width: 118px;
+}
+
+.card-container{
+    display: flex;
+    box-sizing: border-box;
+    padding-right: 20px;
+}
+
+@media (max-width: 575px)
+{
+    .card-container{
+        justify-items: center !important;
+        justify-content: center !important;
+    }
+}
+
+/* css for the nav tabs */
+a:hover,a:focus{
+    outline: none;
+    text-decoration: none;
+}
+.tab .nav-tabs{
+    padding-left: 15px;
+    border-bottom: 4px solid #692f6c;
+    padding-bottom: 7px;
+
+}
+.tab .nav-tabs li a{
+    color: #fff;
+    padding: 10px 20px;
+    margin-right: 10px;
+    position: relative;
+    background: #692f6c;
+    text-shadow: 1px 1px 2px #000;
+    border: none;
+    border-radius: 0;
+    opacity: 0.5;
+    transition: all 0.3s ease 0s;
+}
+.tab .nav-tabs li a:hover{
+    background: #692f6c;
+    opacity: 0.8;
+}
+.tab .nav-tabs li.active a{
+    opacity: 1;
+}
+.tab .nav-tabs li.active a,
+.tab .nav-tabs li.active a:hover,
+.tab .nav-tabs li.active a:focus{
+    color: #fff;
+    background: #692f6c;
+    border: none;
+    border-radius: 0;
+}
+.tab .nav-tabs li a:before,
+.tab .nav-tabs li a:after{
+    content: "";
+    border-top: 44.67px solid transparent;
+    position: absolute;
+    top: -0px;
+}
+.tab .nav-tabs li a:before{
+    border-right: 15px solid #692f6c;
+    left: -15px;
+}
+.tab .nav-tabs li a:after{
+    border-left: 15px solid #692f6c;
+    right: -15px;
+}
+.tab .nav-tabs li a i,
+.tab .nav-tabs li.active a i{
+    display: inline-block;
+    padding-right: 5px;
+    font-size: 15px;
+    text-shadow: none;
+}
+.tab .nav-tabs li a span{
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: -9px;
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+}
+.tab .nav-tabs li a:hover span,
+.tab .nav-tabs li.active a span{
+    letter-spacing: 1px;
+    transition: all 0.3s ease 0s;
+    opacity: 1;
+}
+.tab .tab-content{
+    padding: 30px;
+    background: #fff;
+    font-size: 16px;
+    color: #6c6c6c;
+    line-height: 25px;
+}
+.tab .tab-content h3{
+    font-size: 24px;
+    margin-top: 0;
+}
+
+/* @media only screen and (max-width: 479px){
+    .tab .nav-tabs li{
+        width: 100%;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+       
+      .tab .nav-tabs li a span{
+        opacity: 1;
+        letter-spacing: 1px;
+        }
+} */
+
+.section-title-span{
+    padding-top: 3px;
+    border-radius: 25px;
+    height: 30px;
+}
+
+.section-title, .menu-container{
+    margin-top: 50px;
+}
