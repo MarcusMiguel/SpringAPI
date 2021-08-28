@@ -1,35 +1,35 @@
 package com.restapi.services;
 
-import com.restapi.models.Address;
-import com.restapi.models.Shop;
 import com.restapi.repositories.AddressRepository;
-import com.restapi.repositories.CartRepository;
-import com.restapi.repositories.ShopRepository;
+import com.restapi.models.Address;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class AddressService {
-        @Autowired
-        private AddressRepository addressRepository;
+    private final AddressRepository addressRepository;
 
-        public Iterable<Address> findAll(){
-            return addressRepository.findAll( );
-        }
+    public Iterable<Address> findAll(){
+        return addressRepository.findAll( );
+    }
 
-        public void insert(Address address){
-            addressRepository.save( address );
-            System.out.println("INSERTED: " + address);
-        }
+    public void insert(Address address){
+        addressRepository.save( address );
+        log.info("INSERTED: " + address);
+    }
 
-        public void update(Address address){
-            addressRepository.save( address );
-            System.out.println("ALTERED: " + address);
-        }
+    public void update(Address address){
+        addressRepository.save( address );
+        log.info("ALTERED: " + address);
+    }
 
-        public void delete(Integer id){
-            Address address = addressRepository.findByCode( id );
-            addressRepository.delete( address );
-            System.out.println("DELETED: " + address);
-        }
+    public void delete(Integer id){
+        Address address = addressRepository.findByCode( id );
+        addressRepository.delete( address );
+        log.info("DELETED: " + address);
+    }
 }

@@ -20,7 +20,10 @@ display: none;
 .cartbutton {
 margin-top: 5px;
 width: 118px;
-
+}
+.cancelbtn{
+margin-top: 5px;
+width: 118px;
 }
 
 .carttitle {

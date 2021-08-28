@@ -10,14 +10,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} " />
-    <link th:rel="stylesheet" th:href="@{/css/site.css} " />
+    <link th:rel="stylesheet" th:href="@{/css/site.css}"/>    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <link th:rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css}" />
 </head>
 
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-light fixed-top">
 
-        <a class="navbar-brand" href="#!">
+        <a class="navbar-brand" href="#">
             <img th:src="@{/images/logo.png}" height="50" alt="logo">
         </a>
         <!-- Collapse button -->
@@ -103,11 +104,11 @@
         <!-- Menu Container -->
         <div class="w3-container menu-container" id="menu">
             <div class="w3-content" style="max-width:820px">
+                <!-- Store Section -->
                 <h5 class="w3-center"><span class="section-title-span  w3-tag w3-wide">STORE<i
                             class="fas fa-store"></i></span></h5>
-                <div class="w3-container  storecard-container w3-padding-48 w3-card ">
+                <div class="w3-container storecard-container w3-padding-48 w3-card ">
                     <div class="tab" role="tabpanel">
-                        <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" th:each="shop:${shopservice.findAll()}" class="shop-tab">
                                 <a th:href="${'#'+shop.name}" aria-controls="home" role="tab" data-toggle="tab">
@@ -116,7 +117,6 @@
                                 </a>
                             </li>
                         </ul>
-                        <!-- Tab panes -->
                         <div class="tab-content tabs" id="shops">
                             <div role="tabpanel" th:each="shop:${shopservice.findAll()}" class="tab-pane fade in"
                                 th:id="${shop.name}">
@@ -205,7 +205,7 @@
                                         </div>
                                         <div class="bottom-wrap">
                                             <input class="cart-input float-right" type="number" value=1 min=1>
-                                            <a id="cancelbtn" class="cartbutton btn btn-warning float-right"
+                                            <a id="cancelbtn" class="cancelbtn btn btn-warning float-right"
                                                 href="javascript:void(0)" th:shopcode="${item.shopCode}"
                                                 th:productcode="${item.productCode}" data-abc="true">Remove<i
                                                     class="fas fa-shopping-cart fa-sm"></i>
@@ -257,6 +257,7 @@
     <script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
     <script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
     <script type="text/javascript" th:src="@{/js/scripts.js}"></script>
+    <script type="text/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js}"></script>
 </body>
 
 </html>

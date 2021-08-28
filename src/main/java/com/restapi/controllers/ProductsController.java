@@ -2,41 +2,44 @@ package com.restapi.controllers;
 
 import com.restapi.models.Product;
 import com.restapi.services.ProductService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("api/products")
+@RequestMapping("api/v1/products")
 @PreAuthorize("hasRole('ADMIN')")
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ProductsController {
-    @Autowired
-    private ProductService productService;
+    private final ProductService productService;
 
     @GetMapping
-    public List<Product> list(){
-        return productService.findAll();
+    public ResponseEntity<List<Product>> list(){
+        List<Product> products = productService.findAll();
+        return new ResponseEntity<List<Product>>(products, HttpStatus.OK);
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-        public void insert(@RequestBody Product product){
+    public ResponseEntity insert(@RequestBody Product product){
         productService.insert(product);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
     @PutMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public void update(@RequestBody Product product){
+    public ResponseEntity update(@RequestBody Product product){
         productService.update(product);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
     @DeleteMapping
     @RequestMapping("{id}")
-    @ResponseStatus(HttpStatus.ACCEPTED)
-    public void delete(@PathVariable Integer id){
+    public ResponseEntity delete(@PathVariable Integer id){
         productService.delete(id);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 }

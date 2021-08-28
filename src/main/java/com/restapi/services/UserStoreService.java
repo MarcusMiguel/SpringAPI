@@ -1,21 +1,19 @@
 package com.restapi.services;
 
-import com.restapi.models.*;
-import com.restapi.repositories.AddressRepository;
 import com.restapi.repositories.UserStoreRepository;
-import org.apache.catalina.User;
+import com.restapi.models.UserStore;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserStoreService {
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+public class
+UserStoreService {
 
-    @Autowired
-    private UserStoreRepository userStoreRepository;
-    @Autowired
-    private ShopService shopService;
-    @Autowired
-    private ProductService productService;
+    private final UserStoreRepository userStoreRepository;
+    private final ShopService shopService;
+    private final ProductService productService;
 
     public Iterable<UserStore> findAll(){
         return userStoreRepository.findAll( );
@@ -40,6 +38,5 @@ public class UserStoreService {
         userStoreRepository.deleteByUsernameAndProductCodeAndShopCode( username, productId, shopId  );
         System.out.println("DELETED: " + userStore);
     }
-
 
 }

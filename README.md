@@ -3,11 +3,11 @@
 
 ![img](/src/main/resources/static/images/productstore.gif)
 ## About
-Application that simulates an ecommerce with the user being able to login and add/remove products to cart
+Application that simulates an ecommerce with the user being able to login and add products to the cart.
 ## Project Structure
-- **Frontend**: HTML page with Thymeleaf.
+- **Frontend**: HTML page with Thymeleaf and Bootstrap.
 - **Backend**: Spring API secured with Spring Security + JWT, mostly controllers are for ADMIN usage only.
-
+- **Tests**: Unity Tests where made to the Cart Service.
 ## Technologies
 - Spring
 - Spring Security
@@ -15,6 +15,11 @@ Application that simulates an ecommerce with the user being able to login and ad
 - PostgreSQL
 - Lombok
 - Thymeleaf
+- Bootstrap
+- jUnit
+- Mockito
+- SLF4J
+- Toastr
 ## Usage
 `Only users registered by an ADMIN can use the application[1].`
 

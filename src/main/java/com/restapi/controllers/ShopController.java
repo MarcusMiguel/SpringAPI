@@ -2,8 +2,7 @@ package com.restapi.controllers;
 
 import com.restapi.models.Shop;
 import com.restapi.services.ShopService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -11,15 +10,15 @@ import org.springframework.web.bind.annotation.*;
 
 //@CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/api/shops")
+@RequestMapping("/api/v1/shops")
 //@Api(value="API REST Lojas")
 @PreAuthorize("hasRole('ADMIN')")
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ShopController {
 
-    @Autowired
-    private ShopService shopService;
+    private final ShopService shopService;
 
-  //  @ApiOperation(value="Retorna todas as lojas.")
+    //  @ApiOperation(value="Retorna todas as lojas.")
     @GetMapping
     public Iterable<Shop> list(){
         return shopService.findAll();

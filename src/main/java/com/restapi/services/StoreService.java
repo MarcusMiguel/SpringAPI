@@ -1,23 +1,24 @@
 package com.restapi.services;
 
+import com.restapi.repositories.StoreRepository;
 import com.restapi.models.Product;
 import com.restapi.models.Shop;
 import com.restapi.models.Store;
-import com.restapi.repositories.StoreRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class StoreService {
 
-    @Autowired
-    private ShopService shopService;
-    @Autowired
-    private ProductService productService;
-    @Autowired
-    private StoreRepository storeRepository;
+    private final ShopService shopService;
+    private final ProductService productService;
+    private final StoreRepository storeRepository;
 
-    public Iterable<Store> findAll(){
+    public List<Store> findAll(){
         return storeRepository.findAll( );
     }
 

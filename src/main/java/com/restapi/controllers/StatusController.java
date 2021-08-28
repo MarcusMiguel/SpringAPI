@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class StatusController {
 
-    @GetMapping(path = "/api/status")
+    @GetMapping(path = "/api/v1/status")
     public String check(){
         return "online";
     }

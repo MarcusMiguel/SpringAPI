@@ -65,7 +65,6 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
         customUserDetailsService.startUsers();
     }
 
-
     @Bean
     public DaoAuthenticationProvider daoAuthenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();

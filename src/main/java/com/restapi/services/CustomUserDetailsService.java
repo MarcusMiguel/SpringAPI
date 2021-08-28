@@ -1,7 +1,9 @@
 package com.restapi.services;
 
-import com.restapi.models.UserModel;
 import com.restapi.repositories.UserRepository;
+import com.restapi.models.UserModel;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,19 +12,18 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static com.restapi.security.ApplicationUserRole.ADMIN;
 import static com.restapi.security.ApplicationUserRole.CONSUMER;
 
 @Service
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@Slf4j
 public class CustomUserDetailsService implements UserDetailsService {
-    @Autowired
-    private UserRepository userRepository;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -48,9 +49,20 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
 
     public void register(UserModel user){
-                userRepository.save(user);
+        userRepository.save(user);
+        log.info("USER REGISTERED: " + user.getUsername());
     }
 
+    public void delete(String username){
+        UserModel user = userRepository.findByUsername(username);
+        userRepository.delete(user);
+        log.info("USER DELETED: " + username);
+    }
+
+    public void update(UserModel user){
+      userRepository.save(user);
+      log.info("USER UPDATED: " + user.getUsername());
+    }
     public void startUsers(){
         userRepository.save(
                 new UserModel(

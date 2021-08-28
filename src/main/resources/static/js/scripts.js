@@ -26,33 +26,38 @@ $(document).ready(function () {
        })
 })
 
-
 function cancelCart(shopid, productid) {
-    console.log("removing productid: " + productid + " shop: " + shopid);
     $.ajax({
         type: "POST",
-        url: "https://marcusmiguel-restapi.herokuapp.com/api/carts/removeUI/" + shopid + "/" + productid,
-        complete: function (data) {
+        url: "http://localhost:8080/api/v1/carts/remove/" + shopid + "/" + productid,
+         success: function (data) {
             var shopproductsrow = '#shop-products-row'+shopid
             setTimeout(() => { console.log("product removed from cart"); }, 500)
             $("#cartmenu").load(location.href + " #cartmenu>*", "")
             $("#total-cost").load(location.href + " #total-cost>*", "")
-             $(shopproductsrow).load(location.href + ' ' + shopproductsrow + ">*", "")
+            $(shopproductsrow).load(location.href + ' ' + shopproductsrow + ">*", "")
+            toastr.success("Operation completed successfully!")
+        },
+         error: function (){
+             toastr.error("Operation failed!")
         }
     })
 }
 
 function addToCart(shopid, productid, quantity) {
-    console.log("adding product, shopid: " + shopid + " productid: " + productid + " quantity: " + quantity);
     $.ajax({
         type: "POST",
-        url: "https://marcusmiguel-restapi.herokuapp.com/api/carts/insertUI/" + shopid + "/" + productid + "/" + quantity,
-        complete: function (data) {
+        url: "http://localhost:8080/api/v1/carts/insert/" + shopid + "/" + productid + "/" + quantity,
+         success: function (data) {
             var shopproductsrow = '#shop-products-row'+shopid
             setTimeout(() => { console.log("product added to cart"); }, 500)
             $("#cartmenu").load(location.href + " #cartmenu>*", "")
             $("#total-cost").load(location.href + " #total-cost>*", "")
-              $(shopproductsrow).load(location.href + ' ' + shopproductsrow + ">*", "")
+            $(shopproductsrow).load(location.href + ' ' + shopproductsrow + ">*", "")
+            toastr.success("Operation completed successfully!")
+        },
+        error: function (){
+            toastr.error("Operation failed!")
         }
     })
 }

@@ -2,45 +2,28 @@ package com.restapi.controllers;
 
 import com.restapi.models.*;
 import com.restapi.services.*;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.*;
 
-import static com.restapi.security.ApplicationUserRole.ADMIN;
-import static com.restapi.security.ApplicationUserRole.CONSUMER;
-
 @Controller
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class MainController
 {
-    @Autowired
-    private StoreService storeService;
-
-    @Autowired
-    private ShopService shopService;
-
-    @Autowired
-    private ProductService productService;
-
-    @Autowired
-    private PriceService priceService;
-
-    @Autowired
-    private CartService cartService;
-
-    @Autowired
-    private AddressService addressService;
-
-    @Autowired
-    private CustomUserDetailsService customUserDetailsService;
-
-    @Autowired
-    private UserStoreService userStoreService;
+    private final StoreService storeService;
+    private final ShopService shopService;
+    private final ProductService productService;
+    private final PriceService priceService;
+    private final CartService cartService;
+    private final AddressService addressService;
+    private final CustomUserDetailsService customUserDetailsService;
+    private final UserStoreService userStoreService;
 
     private boolean started = false;
     @RequestMapping("/")
