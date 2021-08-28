@@ -29,7 +29,7 @@ $(document).ready(function () {
 function cancelCart(shopid, productid) {
     $.ajax({
         type: "POST",
-        url: "http://localhost:8080/api/v1/carts/remove/" + shopid + "/" + productid,
+        url: "https://marcusmiguel.github.io/api/v1/carts/remove/" + shopid + "/" + productid,
          success: function (data) {
             var shopproductsrow = '#shop-products-row'+shopid
             setTimeout(() => { console.log("product removed from cart"); }, 500)
@@ -47,7 +47,7 @@ function cancelCart(shopid, productid) {
 function addToCart(shopid, productid, quantity) {
     $.ajax({
         type: "POST",
-        url: "http://localhost:8080/api/v1/carts/insert/" + shopid + "/" + productid + "/" + quantity,
+        url: "https://marcusmiguel.github.io/api/v1/carts/insert/" + shopid + "/" + productid + "/" + quantity,
          success: function (data) {
             var shopproductsrow = '#shop-products-row'+shopid
             setTimeout(() => { console.log("product added to cart"); }, 500)
