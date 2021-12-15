@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.PostConstruct;
 import java.util.*;
 
 @Controller
@@ -25,13 +26,8 @@ public class MainController
     private final CustomUserDetailsService customUserDetailsService;
     private final UserStoreService userStoreService;
 
-    private boolean started = false;
     @RequestMapping("/")
     public ModelAndView MainPage() {
-        if (!started){
-            start();
-            started = true;
-        };
         ModelAndView mv = new ModelAndView("index");
         mv.addObject("shopservice", shopService);
         mv.addObject("cartservice", cartService);
@@ -39,8 +35,10 @@ public class MainController
         return mv;
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
-    public void start() {
+    @PostConstruct
+    private void start() {
+        customUserDetailsService.startUsers();
+
         Shop shop = new Shop(1, "shop1", false, null);
         shopService.insert(shop);
 

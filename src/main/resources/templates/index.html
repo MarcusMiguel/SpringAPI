@@ -77,12 +77,12 @@
     </header>
 
     <!-- Add a background color and large text to the whole page -->
-    <div class="w3-sand w3-grayscale w3-large">
+    <div class=" w3-large">
 
         <!-- About Container -->
         <div class="w3-container" id="about">
             <div class="w3-content" style="max-width:820px">
-                <h5 class="w3-center w3-padding-64 section-title"><span class="section-title-span  w3-tag w3-wide">ABOUT
+                <h5 class="w3-center w3-padding-64 section-title"><span class="section-title-span w3-wide">ABOUT
                         THE
                         CAFE</span></h5>
                 <p>The Cafe was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing
@@ -105,9 +105,9 @@
         <div class="w3-container menu-container" id="menu">
             <div class="w3-content" style="max-width:820px">
                 <!-- Store Section -->
-                <h5 class="w3-center"><span class="section-title-span  w3-tag w3-wide">STORE<i
+                <h5 class="w3-center"><span class="section-title-span   w3-wide">STORE<i
                             class="fas fa-store"></i></span></h5>
-                <div class="w3-container storecard-container w3-padding-48 w3-card ">
+                <div class="w3-container storecard-container w3-padding-48 ">
                     <div class="tab" role="tabpanel">
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" th:each="shop:${shopservice.findAll()}" class="shop-tab">
@@ -117,7 +117,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <div class="tab-content tabs" id="shops">
+                        <div class="tab-content tabs w3-card" id="shops">
                             <div role="tabpanel" th:each="shop:${shopservice.findAll()}" class="tab-pane fade in"
                                 th:id="${shop.name}">
                                 <div class="row" th:id="'shop-products-row'+${shop.code}">
@@ -170,7 +170,7 @@
                     </div>
                 </div>
                 <!-- Cart section -->
-                <h5 id="cart" class="w3-center  section-title"><span class="section-title-span  w3-tag w3-wide">CART<i
+                <h5 id="cart" class="w3-center  section-title"><span class="section-title-span  w3-wide">CART<i
                             class="fas fa-cart-arrow-down"></i></span></h5>
                 <h2 id="total-cost">
                     <span>Total <i class="fas fa-dollar-sign"></i></span>
@@ -226,7 +226,7 @@
     <!-- Contact/Area Container -->
     <div class="w3-container" id="where" style="padding-bottom:32px;">
         <div class="w3-content" style="max-width:820px">
-            <h5 class="w3-center w3-padding-48 section-title"><span class="section-title-span w3-tag w3-wide">WHERE TO
+            <h5 class="w3-center w3-padding-48 section-title"><span class="section-title-span  w3-wide">WHERE TO
                     FIND US</span>
             </h5>
             <p>Find us at some address at some place.</p>
